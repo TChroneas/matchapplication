@@ -3,11 +3,13 @@ package com.tchroneas.matchapplication.controller;
 import com.tchroneas.matchapplication.dto.MatchOddsDTO;
 import com.tchroneas.matchapplication.service.MatchOddsService;
 import jakarta.validation.Valid;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
 @RequestMapping("/match-odds")
+@Validated
 public class MatchOddsController {
 
     private final MatchOddsService matchOddsService;

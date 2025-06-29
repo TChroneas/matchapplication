@@ -31,7 +31,7 @@ public interface MatchOddsMapper {
         return value != null ? new BigDecimal(value) : null;
     }
 
-    @Mapping(target = "id", ignore = true) // prevent ID override
+    @Mapping(target = "id", ignore = true)
     @Mapping(source = "odd", target = "odd", qualifiedByName = "stringToBigDecimal")
     @Mapping(source = "matchId", target = "match.id")
     void updateEntityFromDto(MatchOddsDTO dto, @MappingTarget MatchOdds entity);
