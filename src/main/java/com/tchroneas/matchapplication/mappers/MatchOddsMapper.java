@@ -21,9 +21,6 @@ public interface MatchOddsMapper {
     @Mapping(source = "odd", target = "odd", qualifiedByName = "stringToBigDecimal")
     MatchOdds toEntity(MatchOddsDTO dto);
 
-    List<MatchOddsDTO> toDtoList(List<MatchOdds> entityList);
-    List<MatchOdds> toEntityList(List<MatchOddsDTO> dtoList);
-
     @Named("bigDecimalToString")
     static String bigDecimalToString(BigDecimal value) {
         return value != null ? value.toPlainString() : null;
