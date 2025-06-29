@@ -2,6 +2,8 @@ package com.tchroneas.matchapplication.domain;
 
 import jakarta.persistence.*;
 
+import java.math.BigDecimal;
+
 @Entity
 public class MatchOdds {
 
@@ -15,7 +17,7 @@ public class MatchOdds {
 
     private String specifier;
 
-    private String odd;
+    private BigDecimal odd;
 
     public Long getId() {
         return id;
@@ -41,11 +43,11 @@ public class MatchOdds {
         this.specifier = specifier;
     }
 
-    public String getOdd() {
+    public BigDecimal getOdd() {
         return odd;
     }
 
-    public void setOdd(String odd) {
+    public void setOdd(BigDecimal odd) {
         this.odd = odd;
     }
 }

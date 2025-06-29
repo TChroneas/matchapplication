@@ -1,34 +1,33 @@
-package com.tchroneas.matchapplication.domain;
+package com.tchroneas.matchapplication.dto;
 
 import com.tchroneas.matchapplication.helpers.Sport;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.util.List;
 
-@Entity
-public class Match {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class MatchDTO {
+
     private Long id;
 
+    @NotBlank(message = "Description is required")
     private String description;
 
+    @NotNull(message = "Match date is required")
     private LocalDate matchDate;
 
-    private LocalTime matchTime;
+    @NotNull(message = "Match time is required")
+    private String matchTime;
 
+    @NotBlank(message = "Team A is required")
     private String team_a;
 
+    @NotBlank(message = "Team B is required")
     private String team_b;
 
+    @NotNull(message = "Sport is required")
     private Sport sport;
-
 
     public Long getId() {
         return id;
@@ -54,11 +53,11 @@ public class Match {
         this.matchDate = matchDate;
     }
 
-    public LocalTime getMatchTime() {
+    public String getMatchTime() {
         return matchTime;
     }
 
-    public void setMatchTime(LocalTime matchTime) {
+    public void setMatchTime(String matchTime) {
         this.matchTime = matchTime;
     }
 
@@ -85,5 +84,4 @@ public class Match {
     public void setSport(Sport sport) {
         this.sport = sport;
     }
-
 }
