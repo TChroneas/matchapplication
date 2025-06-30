@@ -12,14 +12,13 @@ public class MatchDTO {
 
     private Long id;
 
-    @NotBlank(message = "Description is required")
     private String description;
 
     @NotNull(message = "Match date is required")
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
     private LocalDate matchDate;
 
-    @NotNull(message = "Match time is required")
+    @NotBlank(message = "Match time is required")
     @Pattern(regexp = "^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$", message = "Match time must be in HH:mm format")
     private String matchTime;
 
