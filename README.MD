@@ -160,10 +160,7 @@ All incoming requests and outgoing responses are mapped to and from DTOs, never 
   - DB data is persisted via named Docker volume.
 
 2. **App available at:**  
-   [http://localhost:8080](http://localhost:8080)  
-   **Swagger/OpenAPI:**  
-   [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
-
+   [http://localhost:8080](http://localhost:8080)
 ---
 
 ### Run Locally (with local PostgreSQL)
