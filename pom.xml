@@ -70,7 +70,6 @@
 			<version>${mapstruct.version}</version>
 		</dependency>
 
-		<!-- Optional: If you're using Spring and want @Mapper to be injectable -->
 		<dependency>
 			<groupId>org.mapstruct</groupId>
 			<artifactId>mapstruct-processor</artifactId>
