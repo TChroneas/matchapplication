@@ -18,8 +18,8 @@ public class MatchOddsDTO {
 
     @NotBlank(message = "Odd is required")
     @Pattern(
-            regexp = "^\\d+(\\.\\d{1,5})?$",
-            message = "Odd must be a valid decimal number (e.g. 1.50)"
+            regexp = "^\\d{1,3}\\.\\d{1,2}$",
+            message = "Odd must have up to 3 digits before and exactly 2 digits after the decimal point (e.g. 1.50, 99.99, 100.00)"
     )
     private String odd;
 
