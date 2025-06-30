@@ -32,7 +32,7 @@ public interface MatchOddsMapper {
 
     @Mapping(target = "id", ignore = true)
     @Mapping(source = "odd", target = "odd", qualifiedByName = "stringToBigDecimal")
-    @Mapping(source = "matchId", target = "match.id")
+    @Mapping(target = "match", ignore = true)
     void updateEntityFromDto(MatchOddsDTO dto, @MappingTarget MatchOdds entity);
 
 }

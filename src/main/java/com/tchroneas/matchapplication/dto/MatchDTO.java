@@ -2,6 +2,7 @@ package com.tchroneas.matchapplication.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.tchroneas.matchapplication.helpers.Sport;
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
@@ -16,6 +17,12 @@ public class MatchDTO {
 
     @NotNull(message = "Match date is required")
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
+    @Schema(
+            type = "string",
+            pattern = "dd-MM-yyyy",
+            example = "31-12-2025",
+            description = "Date in dd-MM-yyyy format"
+    )
     private LocalDate matchDate;
 
     @NotBlank(message = "Match time is required")
