@@ -1,5 +1,8 @@
 package com.tchroneas.matchapplication.helpers;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+
 public enum Sport {
 
 
@@ -7,13 +10,22 @@ public enum Sport {
     BASKETBALL(2);
 
 
-    private int value;
+    private final int value;
 
     Sport(int value) {
         this.value = value;
     }
 
+    @JsonValue
     public int getValue() {
-        return this.value;
+        return value;
+    }
+
+    @JsonCreator
+    public static Sport fromValue(int value) {
+        for (Sport s : Sport.values()) {
+            if (s.value == value) return s;
+        }
+        throw new IllegalArgumentException("Invalid sport value: " + value);
     }
 }

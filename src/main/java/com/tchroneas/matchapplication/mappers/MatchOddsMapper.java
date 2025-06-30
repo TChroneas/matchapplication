@@ -8,7 +8,6 @@ import org.mapstruct.MappingTarget;
 import org.mapstruct.Named;
 
 import java.math.BigDecimal;
-import java.util.List;
 
 @Mapper(componentModel = "spring")
 public interface MatchOddsMapper {

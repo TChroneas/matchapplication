@@ -15,6 +15,6 @@ public interface MatchMapper {
     Match toEntity(MatchDTO dto);
 
 
-    @Mapping(target = "id", ignore = true) // prevent ID override
+    @Mapping(target = "id", ignore = true)
     void updateEntityFromDto(MatchDTO dto, @MappingTarget Match entity);
 }

@@ -1,5 +1,6 @@
 package com.tchroneas.matchapplication.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.tchroneas.matchapplication.helpers.Sport;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -15,10 +16,8 @@ public class MatchDTO {
     private String description;
 
     @NotNull(message = "Match date is required")
-    @Pattern(
-            regexp = "^\\d{4}-\\d{2}-\\d{2}$",
-            message = "Match date must be in yyyy-MM-dd format")
-    private String matchDate;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
+    private LocalDate matchDate;
 
     @NotNull(message = "Match time is required")
     @Pattern(regexp = "^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$", message = "Match time must be in HH:mm format")
@@ -49,11 +48,11 @@ public class MatchDTO {
         this.description = description;
     }
 
-    public String getMatchDate() {
+    public LocalDate getMatchDate() {
         return matchDate;
     }
 
-    public void setMatchDate(String matchDate) {
+    public void setMatchDate(LocalDate matchDate) {
         this.matchDate = matchDate;
     }
 
